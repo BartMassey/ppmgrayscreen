@@ -1,6 +1,13 @@
 /*
+ * Copyright © Bart Massey Feb 2004
+ * ALL RIGHTS RESERVED
+ * [This program is licensed under the "3-clause ('new') BSD License"]
+ * Please see the file COPYING in the source
+ * distribution of this software for license terms.
+ */
+
+/*
  * ppmgrayscreen.c - select gray areas, or specific colored areas
- * Copyright Bart Massey Feb 2004
  * Loosely based on
  * ppmcolormask.c - produce PBM mask of areas containing certain color
  * written by Bryan Henderson in 2000
