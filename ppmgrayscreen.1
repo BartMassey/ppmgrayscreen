@@ -1,0 +1,66 @@
+.TH pppmgrayscreen 1 "8 August 2006"
+.IX pppmgrayscreen
+.SH NAME
+pppmgrayscreen - select gray or specific-colored areas
+.SH SYNOPSIS
+.B pppmgrayscreen
+.R [ -m \fImask\fP ]
+.R [ -t \fItolerance\fP ]
+.R [ \fIppmfile\fP ]
+.SH DESCRIPTION
+This program is designed to filter out unwanted colors from
+an input image.  It is useful to remove blue pencil and rule
+lines, red grading marks, etc. from a scanned image.
+
+The program reads a PPM file as input, and produces a PPM
+file as output.  The output file is the same as the input
+file, except that areas not within \fItolerance\fP of the
+\fImask\fP color (in HSV colorspace) are changed to white.
+The mask color should be a "pure" color, i.e. saturated.  By
+default it is black (hence the program name).
+
+.I ppmfile
+is the input file.  If you don't specify 
+.IR ppmfile ,
+the input is from Standard Input.
+
+The output goes to Standard Output.
+
+You can specify 
+.I color
+five ways:
+.IX "specifying colors"
+.TP 
+o
+An X11-style color name (e.g. 
+.BR black ).
+.TP 
+o 
+An X11-style hexadecimal specifier: rgb:r/g/b, where r g and b are
+each 1- to 4-digit hexadecimal numbers.
+.TP 
+o
+An X11-style decimal specifier: rgbi:r/g/b, where r g and b are
+floating point numbers between 0 and 1.
+.TP 
+o 
+For backwards compatibility, an old-X11-style hexadecimal number:
+#rgb, #rrggbb, #rrrgggbbb, or #rrrrggggbbbb.
+.TP 
+o 
+For backwards compatibility, a triplet of numbers separated by
+commas: r,g,b, where r g and b are floating point numbers between 0
+and 1.  (This style was added before MIT came up with the similar rgbi
+style.)
+
+.SH "SEE ALSO"
+.BR ppmcolormask (!),
+.BR pgmtoppm (1), 
+.BR pnmcomp (1),
+.BR pbmmask (1),
+.BR ppm(5)
+
+.SH AUTHOR
+Bart Massey (bart@cs.pdx.edu), based on ppmcolormask by
+Bryan Henderson (bryanh@giraffe-data.com).
+\" Contributed to the public domain.
