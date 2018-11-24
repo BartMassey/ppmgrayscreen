@@ -4,6 +4,9 @@
 # Please see the file COPYING in the source
 # distribution of this software for license terms.
 
+CC = gcc
+CFLAGS = -Wall -O4
+
 DESTDIR = /usr/local
 
 ppmgrayscreen: ppmgrayscreen.c
