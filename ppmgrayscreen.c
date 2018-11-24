@@ -13,7 +13,7 @@
  * written by Bryan Henderson in 2000
  */
 
-#define _BSD_SOURCE
+#define _DEFAULT_SOURCE
     /* This makes sure strdup() is in string.h */
 
 #include <string.h>
@@ -74,7 +74,7 @@ static double absf(double f) {
     return -f;
 }
 
-static double anglediff(a1, a2) {
+static double anglediff(double a1, double a2) {
     double da = absf(a1 - a2);
     if (da <= 0.5)
 	return da;
