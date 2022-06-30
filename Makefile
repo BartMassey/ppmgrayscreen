@@ -5,7 +5,7 @@
 # distribution of this software for license terms.
 
 CC = gcc
-CFLAGS = -Wall -O4
+CFLAGS = -Wall -O4 -I/usr/include/netpbm
 
 DESTDIR = /usr/local
 

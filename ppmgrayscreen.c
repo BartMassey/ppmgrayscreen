@@ -19,6 +19,7 @@
 #include <string.h>
 #include "ppm.h"
 #include "pbm.h"
+#include "shhopt.h"
 
 static struct cmdline_info {
     /* All the information the user supplied in the command line,
